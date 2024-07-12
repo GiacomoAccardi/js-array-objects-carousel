@@ -37,7 +37,19 @@ const images = [
 //recupero tutti gli elementi utili dal dom
 const active_item_container = document.getElementById('active-item-cont');
 const items_list = document.getElementById('item-cont');
-const btnUp = document.getElementById('up');
-const btnDown = document.getElementById('down');
-const itemTitle = document.getElementById('title');
-const itemDescription = document.getElementById('description');
+const btnUp = document.getElementById('next');
+const btnDown = document.getElementById('back');
+
+// definisco variabile per immagini attive
+let itemActive = '';
+
+//innietto l'immagine nel dom con un ciclo
+images.forEach((elem) => {
+    itemActive += `<img src="${elem.image}" alt="" id="active-img">
+            <div class="label">
+                <div id="title">${elem.title}</div>
+                <div id="description">${elem.text}</div>
+            </div>`
+});
+
+document.querySelector('.active-item').innerHTML = itemActive;
