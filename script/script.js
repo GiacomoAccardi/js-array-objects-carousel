@@ -60,24 +60,33 @@ images.forEach((elem) => {
 document.querySelector('.active-item').innerHTML = itemActive;
 
 //tolgo la classe d-none al primo elemento
-document.querySelectorAll('.element-cont')[currentActive].classList.remove('d-none');
+let all = document.querySelectorAll('.element-cont');
+all[currentActive].classList.remove('d-none');
 
 // faccio funcionare i bottoni
 
 btnNext.addEventListener('click', function(){
-    document.querySelectorAll('.element-cont')[currentActive].classList.add('d-none');
+    all[currentActive].classList.add('d-none');
 
-    currentActive++;
+    if (currentActive == all.length -1 ){
+        currentActive = 0;
+    } else {
+        currentActive++;
+    }
 
-    document.querySelectorAll('.element-cont')[currentActive].classList.remove('d-none');
+    all[currentActive].classList.remove('d-none');
 
 });
 
 btnBack.addEventListener('click', function(){
-    document.querySelectorAll('.element-cont')[currentActive].classList.add('d-none');
+    all[currentActive].classList.add('d-none');
 
-    currentActive--;
+    if (currentActive == 0 ){
+        currentActive = all.length -1;
+    } else {
+        currentActive--;
+    }
 
-    document.querySelectorAll('.element-cont')[currentActive].classList.remove('d-none');
+    all[currentActive].classList.remove('d-none');
 
 });
