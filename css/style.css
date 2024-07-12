@@ -50,8 +50,11 @@ body{
     left: 10px;
     bottom: 47%;
 }
+.element-cont{
+    height: 100%;
+}
 
-.active-item img{
+.element-cont img{
     width: 100%;
     height: 100%;
     object-fit:cover;
@@ -70,4 +73,7 @@ body{
     background-color: rgba(0, 0, 0, 0.656);
     color: white;
     padding: 30px;
+}
+.d-none{
+    display: none;
 }

@@ -37,20 +37,47 @@ const images = [
 //recupero tutti gli elementi utili dal dom
 const active_item_container = document.getElementById('active-item-cont');
 const items_list = document.getElementById('item-cont');
-const btnUp = document.getElementById('next');
-const btnDown = document.getElementById('back');
+const btnNext = document.getElementById('next');
+const btnBack = document.getElementById('back');
 
 // definisco variabile per immagini attive
 let itemActive = '';
+//definisco una variabile che mi indica tramite indice l'immagine
+let currentActive = 0;
 
 //innietto l'immagine nel dom con un ciclo
 images.forEach((elem) => {
-    itemActive += `<img src="${elem.image}" alt="" id="active-img">
+    itemActive += `
+        <div class="element-cont d-none">
+            <img src="${elem.image}" alt="" id="active-img">
             <div class="label">
                 <div id="title">${elem.title}</div>
                 <div id="description">${elem.text}</div>
-            </div>`
-            
+            </div>
+        </div>`
 });
 
 document.querySelector('.active-item').innerHTML = itemActive;
+
+//tolgo la classe d-none al primo elemento
+document.querySelectorAll('.element-cont')[currentActive].classList.remove('d-none');
+
+// faccio funcionare i bottoni
+
+btnNext.addEventListener('click', function(){
+    document.querySelectorAll('.element-cont')[currentActive].classList.add('d-none');
+
+    currentActive++;
+
+    document.querySelectorAll('.element-cont')[currentActive].classList.remove('d-none');
+
+});
+
+btnBack.addEventListener('click', function(){
+    document.querySelectorAll('.element-cont')[currentActive].classList.add('d-none');
+
+    currentActive--;
+
+    document.querySelectorAll('.element-cont')[currentActive].classList.remove('d-none');
+
+});
