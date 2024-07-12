@@ -50,6 +50,7 @@ images.forEach((elem) => {
                 <div id="title">${elem.title}</div>
                 <div id="description">${elem.text}</div>
             </div>`
+            
 });
 
 document.querySelector('.active-item').innerHTML = itemActive;
