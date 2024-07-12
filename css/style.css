@@ -40,15 +40,15 @@ body{
     background-color: rgba(68, 68, 68, 0.771);
     color: white;
 }
-.btn-up{
+.btn-next{
     position: absolute;
-    right: 45%;
-    top: 10px;
+    right: 10px;
+    top: 45%;
 }
-.btn-down{
+.btn-back{
     position: absolute;
-    right: 45%;
-    bottom: 10px;
+    left: 10px;
+    bottom: 47%;
 }
 
 .active-item img{
